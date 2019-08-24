@@ -1,3 +1,5 @@
+package edu.algorithms.array;
+
 public class SpiralOrderMatrix {
 
     public static void main (String[] args) {
