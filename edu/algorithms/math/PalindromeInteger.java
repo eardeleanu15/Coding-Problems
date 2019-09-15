@@ -26,7 +26,7 @@ public class PalindromeInteger {
         // negative number case
         if (A < 0) {
             return 0;
-        } else if (A >=0 && A <= 9) {
+        } else if (A <= 9) {
             // single digit case
             return 1;
         } else {
