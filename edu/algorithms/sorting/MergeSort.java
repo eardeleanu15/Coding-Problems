@@ -59,7 +59,7 @@ public class MergeSort {
         }
 
         // copy temp to original interval
-        for(i = start; i <= end; i += 1) {
+        for(i = start; i <= end; i ++) {
             Arr[i] = temp[i - start];
         }
     }
