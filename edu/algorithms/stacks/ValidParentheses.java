@@ -9,7 +9,7 @@ import java.util.Stack;
  *
  * Return 0 / 1 ( 0 for false, 1 for true ) for this problem
  */
-public class GenerateAllParentheses {
+public class ValidParentheses {
 
     public int isValid(String A) {
         char openParenthese = '(';
