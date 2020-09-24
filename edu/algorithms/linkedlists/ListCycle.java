@@ -46,10 +46,10 @@ public class ListCycle {
         Set<Integer> visited = new HashSet<>();
         ListNode current = a;
         while (current != null) {
-            if (visited.contains(Integer.valueOf(current.val))) {
+            if (visited.contains(current.val)) {
                 return current;
             } else {
-                visited.add(Integer.valueOf(current.val));
+                visited.add(current.val);
             }
 
             current = current.next;
@@ -80,5 +80,25 @@ public class ListCycle {
             }
         }
         return null;
+    }
+
+    /**
+     * Floyd's Cycle-Finding Algorithm impl 2
+     */
+    public boolean hasCycle(ListNode head) {
+        ListNode slowPtr = head;
+        ListNode fastPtr = head;
+        boolean hasCycle = false;
+        if (head != null) {
+            while (fastPtr != null && fastPtr.next != null) {
+                fastPtr = fastPtr.next.next;
+                slowPtr = slowPtr.next;
+                if (fastPtr != null && (fastPtr == slowPtr)) {
+                    hasCycle = true;
+                    break;
+                }
+            }
+        }
+        return hasCycle;
     }
 }
