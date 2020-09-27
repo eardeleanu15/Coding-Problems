@@ -40,10 +40,7 @@ public class KthSmallestElement {
      * Space complexity: O(N) for heap construction
      */
     public int kthSmallest(final List<Integer> A, int B) {
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-        for (Integer i : A) {
-            minHeap.add(i);
-        }
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>(A);
 
         int result = 0;
         for (int i = 0; i < B; i++) {

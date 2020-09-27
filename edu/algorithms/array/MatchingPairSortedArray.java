@@ -15,7 +15,7 @@ package edu.algorithms.array;
 public class MatchingPairSortedArray {
 
     public static void main(String[] args) {
-        int[] vector = {1, 2 , 3 , 4};
+        int[] vector = {1, 2 , 4 , 4};
         System.out.println("Vector (1, 2, 4, 4) has pair for sum 8: " + hasPair(vector, 8));
 
         int[] vector2 = {1, 2 , 3 , 9};
