@@ -6,7 +6,7 @@ package edu.algorithms.math;
 public class SquareRoot {
 
     public static void main(String[] args) {
-        System.out.println("Square root of 16 is: " + squareRoot(26));
+        System.out.println("Square root of 26 is: " + squareRoot(26));
         System.out.println("Square root of 11 is: " + squareRoot(11));
     }
 

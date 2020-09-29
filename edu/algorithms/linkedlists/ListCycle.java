@@ -89,16 +89,15 @@ public class ListCycle {
         ListNode slowPtr = head;
         ListNode fastPtr = head;
         boolean hasCycle = false;
-        if (head != null) {
-            while (fastPtr != null && fastPtr.next != null) {
-                fastPtr = fastPtr.next.next;
-                slowPtr = slowPtr.next;
-                if (fastPtr != null && (fastPtr == slowPtr)) {
-                    hasCycle = true;
-                    break;
-                }
+        while (fastPtr != null && fastPtr.next != null) {
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if (fastPtr == slowPtr) {
+                hasCycle = true;
+                break;
             }
         }
+
         return hasCycle;
     }
 }
