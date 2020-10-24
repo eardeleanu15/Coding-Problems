@@ -34,7 +34,16 @@ import java.util.Queue;
 public class TopKFrequentWordsAmazon {
 
     public static void main(String[] args) {
-        
+        String[] keywords = {"anacell", "cetracular", "betacellular"};
+        String[] reviews =
+            { "Anacell provides the best services in the city",
+                "betacellular has awesome services",
+                "Best services provided by anacell, everyone should use anacell"
+            };
+        List<String> popularKeywords = solve(2, keywords, reviews);
+        for (String keyword : popularKeywords) {
+            System.out.print(keyword + " ");
+        }
     }
 
     private static List<String> solve(int k, String[] keywords, String[] reviews) {
@@ -53,6 +62,8 @@ public class TopKFrequentWordsAmazon {
 
         Queue<Map.Entry<String, Integer>> topFrequencies =
             new PriorityQueue<>((a,b) -> a.getValue().equals(b.getValue()) ? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue());
+        topFrequencies.addAll(frequencies.entrySet());
+
         List<String> topWords = new ArrayList<>();
         while(!topFrequencies.isEmpty() && k-- > 0) {
             topWords.add(topFrequencies.poll().getKey());
